@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-dev-pub
+  labels:
+    app: test-dev
+    tier: pub
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test-dev
+      tier: pub
+  template:
+    metadata:
+      labels:
+        app: test-dev
+        tier: pub
+    spec:
+      containers:
+      - name: pub
+        image: test-dev-pub
+        ports:
+        - containerPort: 5556
+        resources:
+          requests:
+            cpu: 100m
+            memory: 200Mi
+          
+        
+        

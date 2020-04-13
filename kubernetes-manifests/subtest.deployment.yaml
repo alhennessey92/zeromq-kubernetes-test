@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-dev-sub
+  labels:
+    app: test-dev
+    tier: sub
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test-dev
+      tier: sub
+  template:
+    metadata:
+      labels:
+        app: test-dev
+        tier: sub
+    spec:
+      containers:
+      - name: sub
+        image: test-dev-sub
+        ports:
+        - containerPort: 5556
+        resources:
+          requests:
+            cpu: 100m
+            memory: 200Mi
+          

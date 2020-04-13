@@ -1,0 +1,8 @@
+{
+    "cloudcode.last-used-context": {
+        "Run on Kubernetes": {
+            "kubeConfigPath": "/Users/al/.kube/config",
+            "contextName": "gke_sanctuary-280392_europe-west1-d_sanctuary-dev"
+        }
+    }
+}

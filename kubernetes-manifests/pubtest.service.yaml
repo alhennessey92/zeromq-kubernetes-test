@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: test-dev-pub
+  labels:
+    app: test-dev
+    tier: pub
+spec:
+  type: ClusterIP
+  selector:
+    app: test-dev
+    tier: sub
+  ports:
+  - port: 5556
+    targetPort: 5556
